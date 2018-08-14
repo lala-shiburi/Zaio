@@ -4,8 +4,117 @@ if (isset($_POST["data"]))
     { 
         $usrdata = $_POST["data"];
         $myArray = explode(',', $usrdata);
-        containsDuplicates($myArray);
+        firstDuplicate($myArray);
     }
+
+
+    function firstDuplicate($a) {
+        $arr_length = count($a); 
+        $dublicates="";
+        
+        foreach ($a as $i => $data) {
+            
+             foreach ($a as $o => $data_0) {
+                 echo "$i :$data.first<br>";
+                 echo "$o :$data_0<br>";
+                 
+                 if($data==$data_0 && $i != $o) {
+                     
+                      echo ("True");
+                      //$dublicates.=$data;
+                    
+                      exit;
+                 
+                  }elseif($arr_length-1 == $i){
+                        
+         
+                        echo ("False");
+                         exit;
+                 
+             }
+             
+         }
+    
+    
+        }
+
+    }
+
+
+
+
+    function Duplicate($a) {
+        $arr_length = count($a); 
+        $dublicates="";
+        
+        foreach ($a as $i => $data) {
+            
+             foreach ($a as $o => $data_0) {
+                 echo "$i :$data.first<br>";
+                 echo "$o :$data_0<br>";
+                 
+                 if($data==$data_0 && $i != $o) {
+                     
+                      echo ("True");
+                      //$dublicates.=$data;
+                    
+                      exit;
+                 
+                  }elseif($arr_length-1 == $i){
+                        
+         
+                        echo ("False");
+                         exit;
+                 
+             }
+             
+         }
+    
+    
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function containsDuplicates($a) {
@@ -37,7 +146,7 @@ function containsDuplicates($a) {
          $k=0;
      }
 
-     
+
     }
 
 
