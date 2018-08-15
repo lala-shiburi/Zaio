@@ -10,26 +10,30 @@ if (isset($_POST["data"]))
 
     function firstDuplicate($a) {
         $arr_length = count($a); 
-        $dublicates="";
+        $dublicates=array();
+
         
         foreach ($a as $i => $data) {
             
              foreach ($a as $o => $data_0) {
-                 echo "$i :$data.first<br>";
-                 echo "$o :$data_0<br>";
+                 //echo "$i :$data.first<br>";
+                 //echo "$o :$data_0<br>";
                  
-                 if($data==$data_0 && $i != $o) {
+                 if($data==$data_0 && $i != $o && $o>$i) {
                      
-                      echo ("True");
-                      //$dublicates.=$data;
+                      //echo ("True");
+                      
+                      //echo "<br>Dub ".$dublicates;
+                      array_push($dublicates,$o);
                     
-                      exit;
+                      
                  
-                  }elseif($arr_length-1 == $i){
+                  }elseif($arr_length-1 == $i && !$dublicates){
                         
-         
-                        echo ("False");
-                         exit;
+                    
+                        echo ("-1");
+                        exit;
+                        
                  
              }
              
@@ -37,6 +41,10 @@ if (isset($_POST["data"]))
     
     
         }
+        //echo $dublicates."last";
+        sort($dublicates);
+        //print_r($dublicates);
+        echo $a[$dublicates[0]];
 
     }
 
