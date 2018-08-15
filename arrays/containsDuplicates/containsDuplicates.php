@@ -9,14 +9,13 @@ if (isset($_POST["data"]))
 
 function containsDuplicates($a) {
         $arr_length = count($a); 
-        $dublicates="";
+        
         
         foreach ($a as $i => $data) {
             
              foreach ($a as $o => $data_0) {
-                 echo "$i :$data.first<br>";
-                 echo "$o :$data_0<br>";
-                 
+                
+                                  
                  if($data==$data_0 && $i != $o) {
                      
                       echo ("True");
